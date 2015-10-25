@@ -7,9 +7,9 @@ var CommentList = React.createClass({
   render: function() {
     var commentNodes = this.props.data.map(function (comment) {
       return (
-          <Comment author={comment.author}>
-            {comment.text}
-          </Comment>
+        <Comment author={comment.author}>
+          {comment.text}
+        </Comment>
       );
     });
     return (
@@ -75,7 +75,7 @@ var CommentBox = React.createClass({
   },
 
   handleCommentSubmit: function(comment) {
-    var comments = this.state.data;
+    var comments    = this.state.data;
     var newComments = comments.concat([comment]);
     this.setState({data: newComments});
     $.ajax({
