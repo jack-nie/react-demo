@@ -34,6 +34,18 @@ var Comment = React.createClass({
   }
 });
 
+var CommentForm = React.createClass({
+  render: function() {
+    return (
+      <form className="commentForm">
+        <input type="text" placeholder="Your Name"/>
+        <input type="text" placeholder="Say something..." />
+        <input type="submit" value="post" />
+      </form>
+    );
+  }
+});
+
 var CommentBox = React.createClass({
   loadCommentsFromServer: function() {
     $.ajax({
@@ -62,6 +74,7 @@ var CommentBox = React.createClass({
       <div className="commentBox">
         <h1>Comments</h1>
         <CommentList data={this.state.data}/>
+        <CommentForm />
       </div>
     );
   }
