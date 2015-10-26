@@ -112,7 +112,27 @@ var CommentBox = React.createClass({
   }
 });
 
+var MyComponent = React.createClass({
+  handleClick: function() {
+    this.refs.myTextInput.getDOMNode().focus();
+  },
+
+  render: function() {
+    return (
+      <div>
+      　<input type="text" ref="myTextInput" />
+        <input type="button" value="Focus the text input" onClick={this.handleClick} />
+      </div>
+    );
+  }
+});
+
 ReactDom.render(
   <CommentBox url="comments.json" pollInterval={2000}/>,
   document.getElementById('content')
-)
+);
+
+ReactDom.render(
+  <MyComponent />,
+  document.getElementById("container")
+);
