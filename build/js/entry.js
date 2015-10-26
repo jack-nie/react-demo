@@ -137,6 +137,25 @@ var FancyCheckbox = React.createClass({
   }
 });
 
+var LikeButton = React.createClass({
+  getInitialState: function() {
+    return {liked: false};
+  },
+
+  handleClick: function() {
+    this.setState({liked: !this.state.liked}); 
+  },
+
+  render: function() {
+    var text = this.state.liked ? 'liked' : 'haven\'t liked';
+    return (
+      <p onClick={this.handleClick}>
+        You {text} this.Click to toggle.
+      </p>
+    );
+  }
+});
+
 ReactDom.render(
   <CommentBox url="comments.json" pollInterval={2000}/>,
   document.getElementById('content')
@@ -147,9 +166,14 @@ ReactDom.render(
   document.getElementById("container")
 );
 
-React.render(
+ReactDom.render(
   <FancyCheckbox checked={true} onClick={console.log.bind(console)}>
     Hello world!
   </FancyCheckbox>,
   document.getElementById("fancy")
 );
+
+ReactDom.render(
+    <LikeButton />,
+    document.getElementById("like-button")
+)
