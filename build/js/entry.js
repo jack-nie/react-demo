@@ -127,6 +127,16 @@ var MyComponent = React.createClass({
   }
 });
 
+var FancyCheckbox = React.createClass({
+  render: function() {
+    var {checked, ...other} = this.props;
+    var fancyClass = this.props.checked ? "FancyChecked" : "FancyUnChecked";
+    return (
+      <div {...other} className={fancyClass} />
+    );
+  }
+});
+
 ReactDom.render(
   <CommentBox url="comments.json" pollInterval={2000}/>,
   document.getElementById('content')
@@ -135,4 +145,11 @@ ReactDom.render(
 ReactDom.render(
   <MyComponent />,
   document.getElementById("container")
+);
+
+React.render(
+  <FancyCheckbox checked={true} onClick={console.log.bind(console)}>
+    Hello world!
+  </FancyCheckbox>,
+  document.getElementById("fancy")
 );
