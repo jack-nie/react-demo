@@ -189,6 +189,48 @@ var TickTock = React.createClass({
   }
 });
 
+var ControlledComponentWithoutChange = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <input type="text" value="hello ControlledComponent!" />
+        <textarea name="description" value="This is a description."/>
+        <select value="B">
+         <option value="A">Apple</option>
+         <option value="B">Banana</option>
+         <option value="C">Cranberry</option>
+        </select>
+        <select value={["B", "C"]}  mutilpie={true}>
+         <option value="A">Apple</option>
+         <option value="B">Banana</option>
+         <option value="C">Cranberry</option>
+        </select>
+      </div>
+    );
+  }
+});
+
+var ControlledComponent = React.createClass({
+  getInitialState: function() {
+    return {value: 'Hello!'};
+  },
+
+    handleChange: function(event) {
+      this.setState({value: event.target.value});
+    },
+
+    render: function() {
+      var value= this.state.value;
+      return <input type="text" value={value} onChange={this.handleChange} />;
+    }
+});
+
+var UnControlledComponent = React.createClass({
+    render: function() {
+      return <input type="text" defaultValue="Hello UnControlledComponent"  />;
+    }
+});
+
 ReactDom.render(
   <CommentBox url="api/comments" pollInterval={2000}/>,
   document.getElementById('content')
@@ -209,9 +251,24 @@ ReactDom.render(
 ReactDom.render(
   <LikeButton />,
   document.getElementById("like-button")
-)
+);
 
 ReactDom.render(
   <TickTock />,
-  document.getElementById('tick-tock')
-)
+  document.getElementById("tick-tock")
+);
+
+ReactDom.render(
+  <ControlledComponent />,
+  document.getElementById("controlled-component")
+);
+
+ReactDom.render(
+  <ControlledComponentWithoutChange />,
+  document.getElementById("controlled-component-without-change")
+);
+
+ReactDom.render(
+  <UnControlledComponent />,
+  document.getElementById("un-controlled-component")
+);
