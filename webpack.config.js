@@ -1,15 +1,19 @@
 var webpack = require('webpack');
+var htmlWebPackPlugin = require('html-webpack-plugin');
+var path = require('path');
+var SRC_PATH = path.join(__dirname, 'src');
+var TARGET_PATH = path.join(__dirname, 'assets');
 
 module.exports = {
   entry: [
     'webpack-dev-server/client?http://127.0.0.1:8080', 
     'webpack/hot/only-dev-server',
-    './src/js/entry.js' 
+    path.join(SRC_PATH, 'js', 'entry.js')
   ],
   output: {
-    path: __dirname + '/assets/',
-    filename: 'bundle.js',
-    publicPath: '/assets/'
+    path: TARGET_PATH,
+    filename: '[name].js',
+    publicPath: ''
   },
   module: {
     loaders: [
@@ -24,6 +28,10 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new htmlWebPackPlugin({
+      inject: true,
+      template: 'src/index.html'
+    }),
     new webpack.NoErrorsPlugin()
   ]
 };
