@@ -4,7 +4,8 @@
   "description": "react demo for learning",
   "main": "server.js",
   "scripts": {
-    "test": "test",
+    "watch": "webpack --progress --color --watch",
+    "build": "webpack --progress --color",
     "start": "nodejs server.js"
   },
   "repository": {
