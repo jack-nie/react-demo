@@ -11,7 +11,13 @@ var ControlledComponent = React.createClass({
 
     render: function() {
       var value= this.state.value;
-      return <input type="text" value={value} onChange={this.handleChange} />;
+      return (
+        <div>
+          <label for="ControlledComponent">ControlledComponent:</label>
+          <input type="text" value={value} onChange={this.handleChange} />
+          <br></br>
+        </div>
+      );
     }
 });
 
