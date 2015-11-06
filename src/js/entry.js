@@ -1,3 +1,4 @@
+require('../style/style.css');
 var React    = require('react');
 var ReactDom = require('react-dom');
 var CommentBox  = require('./components/CommentBox.react');
