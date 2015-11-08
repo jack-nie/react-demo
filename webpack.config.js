@@ -17,12 +17,10 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.css$/, loader: "style-loader!css-loader"  },
-      { test: /\.png$/, loader: "url-loader?limit=100000"  },
-      { test: /\.jpg$/, loader: "file-loader"  },
+      { test: /\.css$/, exclude: /node_modules/, loader: "style-loader!css-loader"  },
+      { test: /\.png$/, exclude: /node_modules/, loader: "url-loader?limit=100000"  },
+      { test: /\.jpg$/, exclude: /node_modules/, loader: "file-loader"  },
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
-      { test: /\.html$/, exclude: /node_modules/, loader: "raw" },
-      //{ test: /\.jsx?$/, loaders: ['react-hot', 'jsx?harmony'], exclude: /node_modules/ }
     ]
   },
   resolve: {
