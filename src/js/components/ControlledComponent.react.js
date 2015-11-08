@@ -1,8 +1,8 @@
-var React = require('react');
+import React from 'react';
 
 var ControlledComponent = React.createClass({
   getInitialState: function() {
-    return {value: 'Hello!'};
+    return {value: 'Hello world!'};
   },
 
   handleChange: function(event) {

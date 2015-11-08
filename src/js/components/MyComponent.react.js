@@ -1,11 +1,16 @@
-var React = require('react');
+import React from 'react';
 
-var MyComponent = React.createClass({
-  handleClick: function() {
+class MyComponent extends React.Component {
+  constructor() {
+    super();
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
     this.refs.myTextInput.getDOMNode().focus();
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <div>
       　<input type="text" ref="myTextInput" />
@@ -13,6 +18,6 @@ var MyComponent = React.createClass({
       </div>
     );
   }
-});
+}
 
-module.exports = MyComponent;
+export default MyComponent;
