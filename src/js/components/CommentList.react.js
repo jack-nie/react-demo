@@ -18,4 +18,4 @@ class CommentList extends React.Component {
   }
 }
 
-module.exports = CommentList;
+export default CommentList;

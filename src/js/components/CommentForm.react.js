@@ -1,10 +1,15 @@
-var React = require('react');
+import React from 'react';
 
-var CommentForm = React.createClass({
-  handleSubmit: function(e) {
+class CommentForm extends React.Component {
+  constructor() {
+    super();
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
     e.preventDefault();
-    var author = this.refs.author.getDOMNode().value.trim();
-    var text   = this.refs.text.getDOMNode().value.trim();
+    let author = this.refs.author.getDOMNode().value.trim();
+    let text   = this.refs.text.getDOMNode().value.trim();
     if (!text || !author) {
       return;
     }
@@ -13,9 +18,9 @@ var CommentForm = React.createClass({
     this.refs.author.getDOMNode().value = '';
     this.refs.text.getDOMNode().value   = '';
     return
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <form className="commentForm" onSubmit={this.handleSubmit}>
         <label for="name">Name: </label><input type="text" placeholder="Your Name" ref="author" />
@@ -26,7 +31,7 @@ var CommentForm = React.createClass({
       </form>
     );
   }
-});
+}
 
-module.exports = CommentForm;
+export default CommentForm;
 

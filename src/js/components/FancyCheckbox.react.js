@@ -10,4 +10,4 @@ class FancyCheckbox extends React.Component {
   }
 }
 
-module.exports = FancyCheckbox;
+export default FancyCheckbox;
