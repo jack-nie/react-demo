@@ -1,11 +1,11 @@
-var React    = require('react');
-var Showdown = require('showdown');
+import React from 'react';
+import Showdown from 'showdown';
 
-var converter = new Showdown.Converter();
+const converter = new Showdown.Converter();
 
-var Comment = React.createClass({
-  render: function() {
-    var rawMarkup = converter.makeHtml(this.props.children.toString());
+class Comment extends React.Component {
+  render () {
+    const rawMarkup = converter.makeHtml(this.props.children.toString());
     return (
       <div className="comment">
         <h2 className="commentAuthor">
@@ -15,6 +15,6 @@ var Comment = React.createClass({
       </div>
     );
   }
-});
+}
 
-module.exports = Comment;
+export default Comment;

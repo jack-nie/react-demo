@@ -1,7 +1,7 @@
-var React = require('react');
+import React from 'react';
 
-var UnControlledComponent = React.createClass({
-    render: function() {
+class UnControlledComponent extends React.Component {
+    render() {
       return (
         <div>
           <label for="UnControlledComponent">UnControlledComponent:</label>
@@ -10,7 +10,7 @@ var UnControlledComponent = React.createClass({
         </div>
       );
     }
-});
+}
 
-module.exports = UnControlledComponent;
+export default UnControlledComponent;
 

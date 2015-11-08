@@ -1,7 +1,7 @@
 var React = require('react');
 
-var ControlledComponentWithoutChange = React.createClass({
-  render: function() {
+class ControlledComponentWithoutChange extends React.Component {
+  render() {
     return (
       <div>
         <label for="ControlledComponentWithoutChange">CtldComponent:</label>
@@ -24,6 +24,6 @@ var ControlledComponentWithoutChange = React.createClass({
       </div>
     );
   }
-});
+}
 
-module.exports = ControlledComponentWithoutChange;
+export default ControlledComponentWithoutChange;

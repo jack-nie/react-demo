@@ -1,13 +1,13 @@
-var React = require('react');
+import React from 'react';
 
-var FancyCheckbox = React.createClass({
-  render: function() {
-    var {checked, ...other} = this.props;
-    var fancyClass = this.props.checked ? "FancyChecked" : "FancyUnChecked";
+class FancyCheckbox extends React.Component {
+  render() {
+    let {checked, ...other} = this.props;
+    let fancyClass = this.props.checked ? "FancyChecked" : "FancyUnChecked";
     return (
       <div {...other} className={fancyClass} />
     );
   }
-});
+}
 
 module.exports = FancyCheckbox;

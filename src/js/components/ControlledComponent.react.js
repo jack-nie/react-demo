@@ -5,20 +5,20 @@ var ControlledComponent = React.createClass({
     return {value: 'Hello!'};
   },
 
-    handleChange: function(event) {
-      this.setState({value: event.target.value});
-    },
+  handleChange: function(event) {
+    this.setState({value: event.target.value});
+  },
 
-    render: function() {
-      var value= this.state.value;
-      return (
-        <div>
-          <label for="ControlledComponent">ControlledComponent:</label>
-          <input type="text" value={value} onChange={this.handleChange} />
-          <br></br>
-        </div>
-      );
-    }
+  render: function() {
+    var value= this.state.value;
+    return (
+      <div>
+        <label for="ControlledComponent">ControlledComponent:</label>
+        <input type="text" value={value} onChange={this.handleChange} />
+        <br></br>
+      </div>
+    );
+  }
 });
 
 module.exports = ControlledComponent;
