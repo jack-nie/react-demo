@@ -1,16 +1,15 @@
 import React from 'react';
 
-var ControlledComponent = React.createClass({
-  getInitialState: function() {
-    return {value: 'Hello world!'};
-  },
+class ControlledComponent extends React.Component {
 
-  handleChange: function(event) {
+  state = {value: 'Hello world!'};
+
+  handleChange = (event) => {
     this.setState({value: event.target.value});
-  },
+  };
 
-  render: function() {
-    var value= this.state.value;
+  render() {
+    var value = this.state.value;
     return (
       <div>
         <label for="ControlledComponent">ControlledComponent:</label>
@@ -19,6 +18,6 @@ var ControlledComponent = React.createClass({
       </div>
     );
   }
-});
+}
 
-module.exports = ControlledComponent;
+export default ControlledComponent;

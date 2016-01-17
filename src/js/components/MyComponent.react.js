@@ -1,6 +1,7 @@
 import React from 'react';
 
 class MyComponent extends React.Component {
+
   constructor() {
     super();
     this.handleClick = this.handleClick.bind(this);

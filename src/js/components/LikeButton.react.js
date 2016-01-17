@@ -1,22 +1,21 @@
-var React = require('react');
+import React from 'react';
 
-var LikeButton = React.createClass({
-  getInitialState: function() {
-    return {liked: false};
-  },
+class LikeButton extends React.Component {
+  
+  state = {linked: false};
 
-  handleClick: function() {
+  handleClick = (e) => {
     this.setState({liked: !this.state.liked}); 
-  },
+  };
 
-  render: function() {
-    var text = this.state.liked ? 'liked' : 'haven\'t liked';
+  render() {
+    const text = this.state.liked ? 'liked' : 'haven\'t liked';
     return (
       <p onClick={this.handleClick}>
         You {text} this.Click to toggle.
       </p>
     );
   }
-});
+}
 
-module.exports = LikeButton;
+export default LikeButton;
