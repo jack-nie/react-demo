@@ -9,6 +9,7 @@ import ControlledComponentWithoutChange from './ControlledComponentWithoutChange
 import ControlledComponent from './ControlledComponent.react';
 import UnControlledComponent from './UnControlledComponent.react';
 import MyComponent from './MyComponent.react';
+import Avatar from './Avatar.react';
 
 class App extends React.Component{
   render() {
@@ -24,6 +25,7 @@ class App extends React.Component{
         <ControlledComponent />
         <ControlledComponentWithoutChange />
         <UnControlledComponent />
+        <Avatar picname="mini.jpg"/>
       </div>
     );
   }
