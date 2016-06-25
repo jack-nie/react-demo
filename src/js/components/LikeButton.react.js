@@ -1,11 +1,17 @@
 import React from 'react';
 
 class LikeButton extends React.Component {
-  
-  state = {linked: false};
 
-  handleClick = (e) => {
-    this.setState({liked: !this.state.liked}); 
+  constructor() {
+    super();
+    this.state = {
+      liked: false
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState({liked: !this.state.liked});
   };
 
   render() {
