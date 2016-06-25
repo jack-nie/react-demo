@@ -8,8 +8,6 @@ class UserGist extends React.Component {
       userName: '',
       lastGistUrl: ''
     };
-    this.componentDidMount = this.componentDidMount.bind(this);
-    this.componentWillUnmount = this.componentWillUnmount.bind(this);
   }
 
   componentDidMount() {
@@ -19,7 +17,7 @@ class UserGist extends React.Component {
         userName: lastGist.owner.login,
         lastGistUrl: lastGist.html_url
       });
-    });
+    }.bind(this));
   }
 
   componentWillUnmount() {
@@ -32,7 +30,7 @@ class UserGist extends React.Component {
         {this.state.userName}'s last gist is
         <a href={this.state.lastGistUrl}>here</a>.
       </div>
-    )
+    );
   }
 }
 
