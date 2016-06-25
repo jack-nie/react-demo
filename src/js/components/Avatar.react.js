@@ -1,11 +1,15 @@
 import React from 'react';
 
 class Avatar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div>
-        <PagePic pagename ={this.props.picname} />
-        <PageLink pagename ={this.props.picname} />
+        <PagePic picname ={this.props.picname} />
+        <PageLink picname ={this.props.picname} />
       </div>
     );
   }
