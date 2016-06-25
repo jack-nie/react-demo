@@ -11,13 +11,13 @@ class UserGist extends React.Component {
   }
 
   componentDidMount() {
-    this.serverRequest = $.get(this.props.source, function(result) {
+    this.serverRequest = $.get(this.props.source, (result) => {
       let lastGist = result[0];
       this.setState({
         userName: lastGist.owner.login,
         lastGistUrl: lastGist.html_url
       });
-    }.bind(this));
+    });
   }
 
   componentWillUnmount() {
