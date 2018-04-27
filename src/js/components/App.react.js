@@ -11,6 +11,7 @@ import UnControlledComponent from './UnControlledComponent.react';
 import MyComponent from './MyComponent.react';
 import Avatar from './Avatar.react';
 import UserGist from './UserGist.react';
+import MouseTracker from './MouseTracker.react';
 
 class App extends React.Component{
   render() {
@@ -28,6 +29,7 @@ class App extends React.Component{
         <UnControlledComponent />
         <Avatar picname="mini.jpg"/>
         <UserGist source='https://api.github.com/users/jack-nie/gists' />
+        <MouseTracker />
       </div>
     );
   }
