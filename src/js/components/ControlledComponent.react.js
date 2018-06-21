@@ -12,7 +12,7 @@ class ControlledComponent extends React.Component {
     var value = this.state.value;
     return (
       <div>
-        <label for="ControlledComponent">ControlledComponent:</label>
+        <label htmlFor="ControlledComponent">ControlledComponent:</label>
         <input type="text" value={value} onChange={this.handleChange} />
         <br></br>
       </div>

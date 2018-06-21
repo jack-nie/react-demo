@@ -23,9 +23,9 @@ class CommentForm extends React.Component {
   render() {
     return (
       <form className="commentForm" onSubmit={this.handleSubmit}>
-        <label for="name">Name: </label><input type="text" placeholder="Your Name" ref="author" />
+        <label htmlFor="name">Name: </label><input type="text" placeholder="Your Name" ref="author" />
         <br></br>
-        <label for="comment">Comment: </label><input type="text" placeholder="Say something..." ref="text" />
+        <label htmlFor="comment">Comment: </label><input type="text" placeholder="Say something..." ref="text" />
         <br></br>
         <label></label><input type="submit" value="post" />
       </form>

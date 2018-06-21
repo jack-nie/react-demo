@@ -1,4 +1,5 @@
 var React = require('react');
+var createReactClass = require('create-react-class');
 
 var SetIntervalMixin = {
   componentWillMount: function() {
@@ -12,7 +13,7 @@ var SetIntervalMixin = {
   }
 };
 
-var TickTock = React.createClass({
+var TickTock = createReactClass({
   mixins: [SetIntervalMixin],
   getInitialState: function() {
     return {seconds: 0};

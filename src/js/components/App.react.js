@@ -12,8 +12,33 @@ import MyComponent from './MyComponent.react';
 import Avatar from './Avatar.react';
 import UserGist from './UserGist.react';
 import MouseTracker from './MouseTracker.react';
+import {ThemeContext, themes} from './theme-context';
+import ThemedButton from './ThemedButton.react';
+
+function Toolbar(props) {
+  return (
+    <ThemedButton onClick={props.changeTheme}>
+      Change Theme
+    </ThemedButton>
+  )
+}
 
 class App extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      theme: themes.light,
+    }
+
+    this.toggleTheme = () => {
+      this.setState(state => ({
+        theme:
+          state.theme === themes.dark
+          ? themes.light
+          : themes.dark
+      }))
+    }
+  }
   render() {
     return (
       <div>
@@ -30,6 +55,10 @@ class App extends React.Component{
         <Avatar picname="mini.jpg"/>
         <UserGist source='https://api.github.com/users/jack-nie/gists' />
         <MouseTracker />
+        <ThemeContext.Provider value={this.state.theme}>
+          <Toolbar changeTheme={this.toggleTheme} />
+        </ThemeContext.Provider>
+        <ThemedButton />
       </div>
     );
   }

@@ -4,7 +4,8 @@ class Cat extends React.Component {
     render() {
         const mouse = this.props.mouse;
         return (
-            <img src='https://user-images.githubusercontent.com/121535/39332868-68656c92-496e-11e8-9d74-dab79dfaa72e.jpg' style={{ position: 'absolute', left: mouse.x, right: mouse.y, width: 200, height: 200}} />
+            <img src='https://user-images.githubusercontent.com/121535/39332868-68656c92-496e-11e8-9d74-dab79dfaa72e.jpg' 
+              style={{ position: 'absolute', left: mouse.x, right: mouse.y, width: 200, height: 200}} />
         )
     }
 }
